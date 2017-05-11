@@ -62,13 +62,16 @@
 
 	log.info(slurperResponse)
 
-	assert slurperResponse.Table.Town[0] == "Clifton"
 
-	def UKTown = slurperResponse.Table.Town[0] 
-
-	log.info("Town name :" + " " +  UKTown)
-
-	testRunner.testCase.testSuite.project.setPropertyValue("UKTown_projectLevel", UKTown.toString())
+for(int i = 0; i  &lt; slurperResponse.Table.size(); i++)
+{
+	if ( slurperResponse.Table.Town[i] == "Clifton") 
+	{
+		def UKTown = slurperResponse.Table.Town[i]
+		log.info("Townname :" +" " +  UKTown + " on index: " + i)
+		testRunner.testCase.testSuite.project.setPropertyValue("UKTown_projectLevel", UKTown.toString())
+	}
+}
 	</script></con:config></con:testStep><con:testStep type="request" name="GetUKLocationByTown" id="7ff34e8f-d0b3-4f68-acd7-5ca7b6e5f278"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UKLocationSoap</con:interface><con:operation>GetUKLocationByTown</con:operation><con:request name="GetUKLocationByTown" id="2e5a7c8c-ac7b-4e3e-a799-5f8cd1a790bd"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/uklocation.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">
    <soapenv:Header/>
    <soapenv:Body>
@@ -86,6 +89,42 @@
 
 	log.info(slurperResponse)
 
+
+//Get Townname
+for(int i = 0; i  &lt; slurperResponse.Table.size(); i++)
+{
+	if ( slurperResponse.Table.Town[i] == "Clifton") 
+	{
+		def UKTown = slurperResponse.Table.Town[i]
+		log.info("Townname :" +" " +  UKTown + " on index: " + i)
+		com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("UKTown_Global", UKTown.toString())
+	}
+}
+
+//Get County name
+for(int i = 0; i  &lt; slurperResponse.Table.size(); i++)
+{
+	if ( slurperResponse.Table.County[i] == "Bedfordshire") 
+	{
+		def UKCounty = slurperResponse.Table.County[i]
+		log.info("UKCounty :" +" " +  UKCounty + " on index: " + i)
+		com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("UKCounty_Global", UKCounty.toString())
+	}
+}
+
+//Get postcode
+for(int i = 0; i  &lt; slurperResponse.Table.size(); i++)
+{
+	if ( slurperResponse.Table.PostCode[i] == "SG17") 
+	{
+		def UKPostCode = slurperResponse.Table.PostCode[i]
+		log.info("UKPostCode :" +" " +  UKPostCode + " on index: " + i)
+		com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("UKPostCode_Global", UKPostCode.toString())
+	}
+}
+
+	
+/*
 	assert slurperResponse.Table.Town[0] == "Clifton"
 	assert slurperResponse.Table.County[0] == "Bedfordshire"
 	assert slurperResponse.Table.PostCode[0] == "SG17"
@@ -101,6 +140,7 @@
 	com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("UKTown_Global", UKTown.toString())
 	com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("UKCounty_Global", UKCounty.toString())
 	com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("UKPostCode_Global", UKPostCode.toString())
+	*/
 	</script></con:config></con:testStep><con:testStep type="request" name="ValidateUKAdress" id="eb19535b-3893-4a2d-bcac-c7dd0119c499"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UKLocationSoap</con:interface><con:operation>ValidateUKAddress</con:operation><con:request name="ValidateUKAdress" id="d3e448db-f8a8-43bc-93c2-5157b1785d2b"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/uklocation.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">
    <soapenv:Header/>
    <soapenv:Body>
