@@ -3,7 +3,7 @@
 def lastName = "Sjosten"
 def gender = "male"
 def role = "Tester"
-def email = "daniel@hotmail.com"
+def email = "danieltestar@hotmail.com"
 
 
 log.info("Employee firstname:" + " " + firstName)
