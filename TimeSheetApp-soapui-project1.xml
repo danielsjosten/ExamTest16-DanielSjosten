@@ -3,7 +3,7 @@
 def lastName = "Sjosten"
 def gender = "male"
 def role = "Tester"
-def email = "danieltestar@hotmail.com"
+def email = "danieltestarIgen@hotmail.com"
 
 
 log.info("Employee firstname:" + " " + firstName)
@@ -24,10 +24,12 @@ com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("Email", email.toStr
 	"gender": "${Gender}",  
 	"lastName": "${LastName}",  
 	"role": "${Role}"
-	}</con:request><con:originalUri>https://shielded-harbor-21142.herokuapp.com/employees/create</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="4847ee7a-bc92-455d-93d8-d23cee02b308" name="Valid HTTP Status Codes"><con:configuration><codes>204</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Delete-NewEmployee" id="6d820c48-48aa-4d56-a08c-146366d57fb3"><con:settings/><con:config service="Delete-Employee" resourcePath="/employees/delete" methodName="Delete 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Delete-NewEmployee" id="9867ef89-4911-4cbf-a006-b0073dba0381" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://shielded-harbor-21142.herokuapp.com</con:endpoint><con:request>{  
+	}</con:request><con:originalUri>https://shielded-harbor-21142.herokuapp.com/employees/create</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="4847ee7a-bc92-455d-93d8-d23cee02b308" name="Valid HTTP Status Codes"><con:configuration><codes>204</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Delete-NewEmployee" id="6d820c48-48aa-4d56-a08c-146366d57fb3"><con:settings/><con:config service="Delete-Employee" resourcePath="/employees/delete" methodName="Delete 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Delete-NewEmployee" id="9867ef89-4911-4cbf-a006-b0073dba0381" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://shielded-harbor-21142.herokuapp.com</con:endpoint><con:request>public void{
+{  
 	"email": "${Email}",  
 	"firstName": "${FirstName}",  
 	"gender": "${Gender}",  
 	"lastName": "${LastName}",  
 	"role": "${Role}"
-	}</con:request><con:originalUri>https://shielded-harbor-21142.herokuapp.com/employees/delete</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="790f212e-abc8-4bb7-9ea3-5b05fd0f9391" name="Valid HTTP Status Codes"><con:configuration><codes>204</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+	}
+}</con:request><con:originalUri>https://shielded-harbor-21142.herokuapp.com/employees/delete</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="790f212e-abc8-4bb7-9ea3-5b05fd0f9391" name="Valid HTTP Status Codes"><con:configuration><codes>204</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
